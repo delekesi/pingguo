@@ -1,4 +1,4 @@
-var app=angular.module("app",[])
+
 
 var todo=[
     {
@@ -49,14 +49,16 @@ var todo=[
     }
 
 ]
-var colors=["#1BAEF8","#67DC3A","#FF8800","#D07BE3","#F7CC00","#A3855F","#FF2762"]
-app.controller("cc",function ($scope,localstg) {
-    $scope.todo=todo;
+var colors=["#1BAEF8","#67DC3A","#FF8800","#D07BE3","#F7CC00","#A3855F","#FF2762"];
+var app=angular.module("app",[])
+app.controller("cc",function($scope,localstg) {
+    // $scope.todo=todo;
     // localstg.saveData('todo',$scope.todo)
     $scope.todo=localstg.getData("todo")
-      $scope.index=$scope.todo.length-1;
+    $scope.index=$scope.todo.length-1;
     $scope.falg=false;
     $scope.optflag=false;
+    $scope.title=todo.title;
     $scope.colors = colors;
     $scope.chtt = $scope.todo[$scope.index].title;
     $scope.changeColor = $scope.todo[$scope.index].color;
@@ -64,7 +66,7 @@ app.controller("cc",function ($scope,localstg) {
 
       $scope.select=function (i) {
 
-        $scope.index=i;
+         $scope.index=i;
           $scope.chtt = $scope.todo[i].title;
           $scope.changeColor = $scope.todo[i].color;
           $scope.flag=false;
