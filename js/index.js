@@ -51,8 +51,8 @@ var todo=[
 ]
 var colors=["#1BAEF8","#67DC3A","#FF8800","#D07BE3","#F7CC00","#A3855F","#FF2762"]
 app.controller("cc",function ($scope,localstg) {
-    $scope.todo=todo;
- 
+    // $scope.todo=todo;
+    // localstg.saveData('todo',$scope.todo)
     $scope.todo=localstg.getData("todo")
       $scope.index=$scope.todo.length-1;
     $scope.falg=false;
